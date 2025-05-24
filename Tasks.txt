@@ -1,0 +1,10 @@
+1,Comprar pan,false,alta
+2,Hacer ejercicio,false,media
+3,Llamar al médico,true,alta
+4,Estudiar Git,false,urgente
+5,Pagar el internet,true,baja
+6,Leer un libro,false,media
+7,Preparar presentación,false,urgente
+8,Regar las plantas,true,baja
+9,Organizar escritorio,false,media
+10,Comprar regalo,false,alta
