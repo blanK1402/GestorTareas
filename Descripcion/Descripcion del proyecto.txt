@@ -5,7 +5,7 @@ Miembro B: Alex
 A:
 -Crear la clase Task (atributos: id, name, description, dueDate, isCompleted).
 
--Implementar TaskManager (métodos: addTask, listAllTasks).
+-Implementar TaskManager (metodos: addTask, listAllTasks).
 
 -Hacer la interfaz para introducir tareas.
 

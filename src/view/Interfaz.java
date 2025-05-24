@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Interfaz extends JFrame {
 
@@ -30,6 +32,12 @@ public class Interfaz extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewTask = new JButton("New Task");
+		btnNewTask.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				IntoTask newTask = new IntoTask(Interfaz.this);
+				newTask.setVisible(true);
+			}
+		});
 		btnNewTask.setBounds(10, 11, 105, 23);
 		contentPane.add(btnNewTask);
 		
