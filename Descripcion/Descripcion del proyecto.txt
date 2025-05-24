@@ -1,75 +1,17 @@
 Miembro A: Roger
 Miembro B: Alex
 
-=== PROYECTO: GESTOR DE TAREAS (Java MVC) ===
-Duración: 3 días | Horas por persona: 4h/día (12h total)
-Repositorio: [URL_DEL_REPO_GIT]
-Formato de archivo: tasks.txt (CSV: id,nombre,completado,prioridad)
+=== PROYECTO: GESTOR DE TAREAS ===
+A:
+-Crear la clase Task (atributos: id, name, description, dueDate, isCompleted).
 
-=== ESTRUCTURA DE PAQUETES ===
-com.equipo.model       # Clases de datos (Task, TaskManager)
-com.equipo.view        # Interfaz de consola (TaskView)
-com.equipo.controller  # Lógica de control (TaskController)
-com.equipo.util        # Utilidades (FileManager)
+-Implementar TaskManager (métodos: addTask, listAllTasks).
 
-=== DÍA 1: ESTRUCTURA BÁSICA ===
-[MIEMBRO A]
-- Crear clase Task (atributos: id, nombre, completado, prioridad)
-- Implementar FileManager (cargar/guardar tasks.txt)
-- Hacer push a rama main
+-Hacer la interfaz para introducir tareas.
 
-[MIEMBRO B]
-- Crear clase TaskManager (addTask, deleteTask, getTasks)
-- Implementar TaskController (métodos básicos)
-- Crear rama feature/core y subir cambios
+B:
+-Implementar markTaskAsCompleted y deleteTask en TaskManager.
 
-TAREA COMÚN:
-- Mergear ramas y resolver conflictos
-- Commit inicial con estructura MVC
+-Añadir filtros en listTasks (para filtrar pendientes/completadas).
 
-=== DÍA 2: FUNCIONALIDADES AVANZADAS ===
-[MIEMBRO A]
-- Añadir filtros (por prioridad, completado)
-- Implementar excepciones (archivo no encontrado, ID duplicado)
-- Documentar métodos con JavaDoc
-
-[MIEMBRO B]
-- Crear TaskView (menú interactivo con Scanner)
-- Implementar búsqueda por nombre
-- Validar inputs de usuario
-
-TAREA COMÚN:
-- Testear integración MVC
-- Hacer tag v0.2
-
-=== DÍA 3: INTERFAZ Y DEPURACIÓN ===
-[MIEMBRO A]
-- Añadir colores a la consola (ANSI)
-- Optimizar FileManager (usar try-with-resources)
-- Crear README.md
-
-[MIEMBRO B]
-- Implementar ordenación (por prioridad, ID)
-- Grabar demo de funcionamiento
-- Generar JAR ejecutable
-
-TAREA COMÚN:
-- Revisión final de código
-- Merge a main + tag v1.0
-- Push completo al repositorio
-
-=== FLUJO DE TRABAJO GIT ===
-1. Ramas por feature: feature/nombre-funcionalidad
-2. Commits atómicos con mensajes claros:
-   feat: Añadir filtro por prioridad
-   fix: Corregir carga de archivos
-3. Pull requests con revisión de código
-
-=== ARCHIVO TASKS.TXT (EJEMPLO) ===
-1,Comprar leche,false,alta
-2,Hacer ejercicio,true,media
-3,Llamar al médico,false,urgente
-
-=== OBSERVACIONES ===
-- Configurar .gitattributes para LF (Unix)
-- Mantener reunión diaria de 10 min para sincronizar
+-Guardar/cargar datos en archivo txt.
