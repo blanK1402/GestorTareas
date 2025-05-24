@@ -35,7 +35,7 @@ public class IntoTask extends JDialog {
 
         btnGuardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	newTask = new Task(TaskManager.getIdTask(), txtDescription.getText(), (String) cmbPrioridad.getSelectedItem(), false);
+            	newTask = new Task(TaskManager.getIdTask(), txtDescription.getText(), (String) cmbPrioridad.getSelectedItem(), "No completada");
             	createdTask = true;
             	windowClosing();
             }

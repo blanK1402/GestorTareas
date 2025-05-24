@@ -22,4 +22,17 @@ public class TaskManager {
 	public static long getIdTask() {
 		return idTask.getAndIncrement();
 	}
+	
+	
+	// Eliminar tarea por ID 
+    public void deleteTask(int id) {
+        for (int i =0; i < tasks.size(); i++) {
+            Task task = tasks.get(i);
+            if (task.getId() == id) {
+                tasks.remove(task); 
+                break; 
+            }
+        }
+    }
+	
 }

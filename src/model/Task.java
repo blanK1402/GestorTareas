@@ -7,9 +7,9 @@ public class Task {
 	private long id;
 	private String description;
 	private String priority;
-	private boolean isCompleted;
+	private String isCompleted;
 	
-	public Task(long id, String description, String priority, boolean isCompleted){
+	public Task(long id, String description, String priority, String isCompleted){
 		setId(id);
 		setDescription(description);
 		setPriority(priority);
@@ -41,10 +41,10 @@ public class Task {
 	}
 	
 	public boolean isCompleted() {
-		return isCompleted;
+		return isCompleted.equals("Completada") ? true : false;
 	}
 	
-	public void setCompleted(boolean isCompleted) {
+	public void setCompleted(String isCompleted) {
 		this.isCompleted = isCompleted;
 	}
 
@@ -53,7 +53,7 @@ public class Task {
 				String.valueOf(id),
 				description,
 				priority,
-				isCompleted == true ? "Completada" : "No completada"
+				isCompleted 
 		};
 		return res;
 	}
