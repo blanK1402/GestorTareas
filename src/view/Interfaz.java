@@ -1,32 +1,71 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class Interfaz extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtHolaMundo;
+	private JTable table;
 	/**
 	 * Create the frame.
 	 */
 	public Interfaz() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 500, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtHolaMundo = new JTextField();
-		txtHolaMundo.setText("Hola mundo!");
-		txtHolaMundo.setBounds(154, 106, 86, 20);
-		contentPane.add(txtHolaMundo);
-		txtHolaMundo.setColumns(10);
+		JButton btnNewTask = new JButton("New Task");
+		btnNewTask.setBounds(10, 11, 105, 23);
+		contentPane.add(btnNewTask);
+		
+		JButton btnAddFilter = new JButton("Add Filter");
+		btnAddFilter.setBounds(126, 11, 105, 23);
+		contentPane.add(btnAddFilter);
+		
+		JButton btnImportTask = new JButton("Import Task");
+		btnImportTask.setBounds(241, 11, 105, 23);
+		contentPane.add(btnImportTask);
+		
+		JButton btnSaveTasks = new JButton("Save Tasks");
+		btnSaveTasks.setBounds(356, 11, 105, 23);
+		contentPane.add(btnSaveTasks);
+		
+		JPanel panelTasks = new JPanel();
+		panelTasks.setBounds(10, 45, 451, 205);
+		contentPane.add(panelTasks);
+
+		String[] columns = {
+		    "ID",
+		    "Prioridad",
+		    "Descripcion",
+		    "Estado"
+		};
+
+		DefaultTableModel model = new DefaultTableModel(columns, 0);
+		table = new JTable(model);
+		table.setRowHeight(30);
+		table.setFont(new Font("SansSerif", Font.PLAIN, 14));
+		table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 16));
+		table.getTableHeader().setBackground(new Color(50, 50, 50));
+		table.getTableHeader().setForeground(Color.WHITE);
+
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(0, 0, 451, 205); 
+		panelTasks.add(scrollPane);
 	}
 }
