@@ -31,16 +31,6 @@ public class Interfaz extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewTask = new JButton("New Task");
-		btnNewTask.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				IntoTask newTask = new IntoTask(Interfaz.this);
-				newTask.setVisible(true);
-			}
-		});
-		btnNewTask.setBounds(10, 11, 105, 23);
-		contentPane.add(btnNewTask);
-		
 		JButton btnAddFilter = new JButton("Add Filter");
 		btnAddFilter.setBounds(126, 11, 105, 23);
 		contentPane.add(btnAddFilter);
@@ -64,7 +54,7 @@ public class Interfaz extends JFrame {
 		    "Estado"
 		};
 
-		DefaultTableModel model = new DefaultTableModel(columns, 0);
+		final DefaultTableModel model = new DefaultTableModel(columns, 0);
 		table = new JTable(model);
 		table.setRowHeight(30);
 		table.setFont(new Font("SansSerif", Font.PLAIN, 14));
@@ -75,5 +65,19 @@ public class Interfaz extends JFrame {
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 0, 451, 205); 
 		panelTasks.add(scrollPane);
+		
+		JButton btnNewTask = new JButton("New Task");
+		btnNewTask.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				IntoTask newTask = new IntoTask(Interfaz.this);
+				newTask.setVisible(true);
+				
+				if(newTask.isConfirmed()){
+					model.addRow(newTask.getTask().toRow());
+				}
+			}
+		});
+		btnNewTask.setBounds(10, 11, 105, 23);
+		contentPane.add(btnNewTask);
 	}
 }

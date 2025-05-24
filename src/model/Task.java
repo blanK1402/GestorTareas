@@ -1,23 +1,26 @@
 package model;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Vector;
+
 public class Task {
-	private int id;
+	private long id;
 	private String description;
 	private String priority;
 	private boolean isCompleted;
 	
-	public Task(int id, String description, String priority, boolean isCompleted){
+	public Task(long id, String description, String priority, boolean isCompleted){
 		setId(id);
 		setDescription(description);
 		setPriority(priority);
 		setCompleted(isCompleted);
 	}
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	
@@ -43,5 +46,15 @@ public class Task {
 	
 	public void setCompleted(boolean isCompleted) {
 		this.isCompleted = isCompleted;
+	}
+
+	public String[] toRow() {
+		String[] res = {
+				String.valueOf(id),
+				description,
+				priority,
+				isCompleted == true ? "Completada" : "No completada"
+		};
+		return res;
 	}
 }
